@@ -1,0 +1,193 @@
+function imc(peso, metros){
+    imc = peso/(metros*metros);
+    if (imc < 18.5 ){
+        console.log ("Abaixo do peso");
+    }
+    else if (imc >= 18.5 && imc < 25){
+        console.log ("No peso normal");
+    } 
+    else if (imc >= 25 && imc < 30){
+        console.log ("Acima do peso");
+    }
+    else {
+        console.log("Obeso");
+    }
+}
+//imc (92, 1.72)
+
+function reverse (str){
+    var splittedStr = str.split(" ");
+
+    for(var i = 0; i < splittedStr.length; i++){
+        var word = splittedStr[i];
+        var reversedStr = " ";
+    
+        for (var j = word.lenght - 1; j >= 0; j--){
+            var letter = word[j];
+            reversedStr += letter;
+        }
+        reversedStr += " ";
+    }
+    return reversedStr;
+}
+
+var str = reverse("Hoje é Domingo");
+console.log(str); 
+
+function vowels (str){
+    var count = 0;
+    var vogals = ["a", "e", "i", "o", "u"]
+    for(var i = 0; i < str.lenght; i++){
+        if(str[i] =="a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u"){
+            count++;
+        }
+    }
+    return count;
+}
+//vowels (e)
+
+function time (he, me, se, hs, ms, ss){ 
+    var totaltimesES = he * 3600 + me * 60 + se;
+    var totaltimesSS = hs * 3600 + ms * 60 + ss;
+
+    var diffInSeconds =totaltimesES - totaltimesSS;
+    console.log(diffInSeconds); 
+    //Horas
+    var hours = Math.floor (diffInSeconds / 3600);
+    var hoursRemainder = diffInSeconds % 3600;
+    //Minutos
+    var minutes =  Math.floor (hoursRemainder / 60);
+    var seconds = hoursRemainder % 60;
+
+    console.log("Trabalhou" + hours + "h:" + minutes + "m:" + seconds + "s:");
+
+}
+
+//time(8,0,0,9,1,1);
+
+function rectangle (h, w){
+    var height = 10;
+    for (var i = 0; i < height; i++);
+    var line = "";
+    var width = 20;
+    for (var j = 0; j < width; j++);
+    console.log (line)
+}
+
+function box(width, height){
+    for (let i = 0; i < height; i++) {
+        var line = "";
+        for (let j = 0; j < width; j++) {
+            if(i == 0 || i == height -1){
+                line += "*";
+            }
+            else{
+                if(j == 0 || j == width - 1){
+                    line += "*";
+                }
+                else{
+                    line += ""
+                }
+            }
+        }
+        console.log(line);
+    }
+}
+//box (5,5)
+
+
+var students = [];
+
+for (let i = 0; i < 10; i++) {
+    var student = {
+        number: Math.ceil(Math.random() * 1000),
+        grade: Math.random() *20
+    };
+    students.push(student);
+}
+   
+
+function listAll(students){
+    for (let i = 0; i < studentStats.lenght; i++){
+        var student = students[i];
+        console.log("Numbers: " + student.number + ", grade: " + student1.grade);
+    }
+}
+
+function studentStats(students, option) {
+    switch (option) {
+        case 1:
+            listAll(students);
+            break;
+        case 2:
+            bestGrades(students);
+            break;
+        case 3:
+            worstGrade(students);
+            break;
+        default:
+            console.log("Invalid option: ");
+            break;
+
+
+    }
+}
+studentStats(students, 1)
+
+function bestGrades(students){
+    var best = students[0].grade;
+    for(var i= 1; i <studentlenght; i++){
+        if (students[i].grade = best);
+        best = students[i].grade;
+    }
+    return best;
+}
+
+
+function worstGrades(students){
+    var worst = students[0].grade;
+    for(var i= 1; i > studentlenght; i++){
+        if (students[i].grade = worst);
+        worst = students[i].grade;
+    }
+    return worst;
+}
+
+function media(students){
+    var soma = 0;
+    for(var i = 0; i < studentslenght; i++){
+        soma += students[i].grade;
+    }
+    return soma/studentslenght;
+}
+
+function closeMedia(students){
+    var avg = media(students);
+    var resultado = students[0].grade - avg;
+    for (let i = 0; i < students.lenght; i++){
+        if(students[i].grade - avg <resultado){
+            resultado = students[i].grade - avg;
+        }
+    }
+}
+
+function countNegatives(students){
+    var count = 0 ;
+    for(let i = 0; i < students.lenght; i++){
+        var student = students[i];
+        if(students.nota < 9.5){
+            count ++;
+        }
+    }
+    return count;
+}
+
+function countPositives(students){
+    var sum = 0;
+    for(i=0; i < studentslenght; i++){
+        if(students[i].grade>=9.5){
+            sum ++;
+        }
+    }
+    return sum;
+}
